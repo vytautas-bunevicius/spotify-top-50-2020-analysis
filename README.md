@@ -4,15 +4,24 @@
 This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insights into popular tracks, artists, genres, and various features. The analysis includes exploratory data analysis  to answer specific questions about the dataset.
 
 ## Instructions:
-1. **Download the Data:**
-   - https://www.kaggle.com/datasets/atillacolak/top-50-spotify-tracks-2020 from Spotify Top 50 Tracks of 2020.
 
-2. **Setup Environment:**
-   - Ensure you have Python installed.
-   - Install required packages using `pip install -r requirements.txt`.
+- Install the required Python packages using the following command:
 
-3. **Run the Jupyter Notebook:**
-   - Open and run the Spotify50.ipynb for a detailed analysis.
+            pip install -r requirements.txt
+
+- Clone the repository:
+
+            git clone https://github.com/vytautas-bunevicius/Spotify50.git
+
+- Navigate to the repository directory:
+
+            cd Spotify50
+
+Run the following command to start the Jupyter Notebook:
+
+            jupyter notebook
+
+Open the CourseraEDA.ipynb notebook and start exploring the data.
 
 ## Exploratory Data Analysis:
 The Jupyter Notebook contains a comprehensive analysis addressing the following questions:
