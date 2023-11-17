@@ -21,7 +21,7 @@ Run the following command to start the Jupyter Notebook:
 
             jupyter notebook
 
-Open the CourseraEDA.ipynb notebook and start exploring the data.
+Open the Spotify50.ipynb notebook and start exploring the data.
 
 ## Exploratory Data Analysis:
 The Jupyter Notebook contains a comprehensive analysis addressing the following questions:
