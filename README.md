@@ -11,11 +11,11 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 
 - Clone the repository:
 
-            git clone https://github.com/vytautas-bunevicius/Spotify50.git
+            git clone https://github.com/vytautas-bunevicius/spotify-top-50-tracks-2020.git
 
 - Navigate to the repository directory:
 
-            cd Spotify50
+            cd spotify-top-50-tracks-2020
 
 Run the following command to start the Jupyter Notebook:
 
