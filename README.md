@@ -22,8 +22,6 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
             jupyter notebook
 
 
-Open the Spotify50.ipynb notebook and start exploring the data.
-
 ## Exploratory Data Analysis:
 The Jupyter Notebook contains a comprehensive analysis addressing the following questions:
 
