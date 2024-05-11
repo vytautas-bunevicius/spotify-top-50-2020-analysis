@@ -17,9 +17,10 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 
             pip install -r requirements.txt
   
-Run the following command to start the Jupyter Notebook:
+- Run the following command to start the Jupyter Notebook:
 
             jupyter notebook
+
 
 Open the Spotify50.ipynb notebook and start exploring the data.
 
