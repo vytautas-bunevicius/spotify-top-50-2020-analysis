@@ -5,10 +5,6 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 
 ## Instructions:
 
-- Install the required Python packages using the following command:
-
-            pip install -r requirements.txt
-
 - Clone the repository:
 
             git clone https://github.com/vytautas-bunevicius/spotify-top-50-tracks-2020.git
@@ -17,6 +13,10 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 
             cd spotify-top-50-tracks-2020
 
+- Install the required Python packages using the following command:
+
+            pip install -r requirements.txt
+  
 Run the following command to start the Jupyter Notebook:
 
             jupyter notebook
