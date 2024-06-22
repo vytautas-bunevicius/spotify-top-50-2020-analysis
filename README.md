@@ -7,11 +7,11 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 
 - Clone the repository:
 
-            git clone https://github.com/vytautas-bunevicius/spotify-top-50-tracks-2020.git
+            git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
 
 - Navigate to the repository directory:
 
-            cd spotify-top-50-tracks-2020
+            cd spotify-top-50-2020-analysis
 
 - Install the required Python packages using the following command:
 
