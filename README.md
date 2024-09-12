@@ -6,21 +6,22 @@ This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insigh
 ## Instructions:
 
 - Clone the repository:
-
-            git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
+  ```
+  git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
+  ```
 
 - Navigate to the repository directory:
-
-            cd spotify-top-50-2020-analysis
-
+  ```
+  cd spotify-top-50-2020-analysis
+  ```
 - Install the required Python packages using the following command:
-
-            pip install -r requirements.txt
-  
+  ```
+  pip install -r requirements.txt
+  ```
 - Run the following command to start the Jupyter Notebook:
-
-            jupyter notebook
-
+  ```
+  jupyter notebook
+  ```
 
 ## Exploratory Data Analysis:
 The Jupyter Notebook contains a comprehensive analysis addressing the following questions:
