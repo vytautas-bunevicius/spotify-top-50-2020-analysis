@@ -1,12 +1,19 @@
+"""Utilities for loading and processing Spotify Top 50 Tracks data.
+
+This module provides functions to locate the project root, load Spotify
+tracks data from a CSV file, detect outliers in the dataset using specified
+methods, and print the detected outliers in a formatted manner.
+"""
+
 from pathlib import Path
 from typing import Dict
+
 import numpy as np
 import pandas as pd
 
 
 def find_project_root() -> Path:
-    """
-    Find the project root directory by looking for pyproject.toml.
+    """Find the project root directory by looking for pyproject.toml.
 
     Returns:
         Path: Path to project root directory
@@ -21,8 +28,7 @@ def find_project_root() -> Path:
 
 
 def load_spotify_data(file_name: str = "spotifytoptracks.csv") -> pd.DataFrame:
-    """
-    Load Spotify tracks dataset from the data directory.
+    """Load Spotify tracks dataset from the data directory.
 
     Args:
         file_name (str): Name of the CSV file to load
@@ -33,16 +39,16 @@ def load_spotify_data(file_name: str = "spotifytoptracks.csv") -> pd.DataFrame:
     Raises:
         FileNotFoundError: If the CSV file cannot be found in the data directory
     """
+    project_root = find_project_root()
+    file_path = project_root / "data" / file_name
+
+    if not file_path.exists():
+        raise FileNotFoundError(
+            f"Could not find {file_name} in the data directory. "
+            f"Please ensure the file exists at {file_path}"
+        )
+
     try:
-        project_root = find_project_root()
-        file_path = project_root / "data" / file_name
-
-        if not file_path.is_file():
-            raise FileNotFoundError(
-                f"Could not find {file_name} in the data directory. "
-                f"Please ensure the file exists at {file_path}"
-            )
-
         df = pd.read_csv(file_path)
         print(f"Successfully loaded data from: {file_path}")
         return df
@@ -50,28 +56,29 @@ def load_spotify_data(file_name: str = "spotifytoptracks.csv") -> pd.DataFrame:
     except Exception as e:
         print(f"Error loading data: {e}")
         print(f"Current working directory: {Path.cwd()}")
-        print(
-            f"Attempted file path: {file_path if 'file_path' in locals() else 'Not determined'}"
-        )
+        print(f"Attempted file path: {file_path}")
         raise
 
+
 def detect_outliers(
-    df: pd.DataFrame, method: str = 'iqr', threshold: float = 1.5
+    df: pd.DataFrame, method: str = "iqr", threshold: float = 1.5
 ) -> Dict[str, pd.Series]:
     """Detects outliers in numerical columns of a DataFrame using specified method.
 
     Args:
-        df: Input DataFrame containing the data.
-        method: Method to use for outlier detection. Either 'iqr' or 'zscore'.
-            Defaults to 'iqr'.
-        threshold: Threshold for outlier detection.
-            For IQR method: Typically 1.5 (mild outliers) or 3.0 (extreme outliers)
+        df (pd.DataFrame): Input DataFrame containing the data.
+        method (str): Method to use for outlier detection. Either 'iqr' or
+            'zscore'. Defaults to 'iqr'.
+        threshold (float): Threshold for outlier detection.
+            For IQR method: Typically 1.5 (mild outliers) or 3.0 (extreme
+            outliers)
             For Z-score method: Typically 3.0 (3 standard deviations)
             Defaults to 1.5.
 
     Returns:
-        Dictionary with column names as keys and Series of outliers as values.
-        For columns with no outliers, an empty Series is returned.
+        Dict[str, pd.Series]: Dictionary with column names as keys and Series of
+            outliers as values. For columns with no outliers, an empty Series is
+            returned.
 
     Raises:
         ValueError: If an invalid method is specified.
@@ -90,7 +97,7 @@ def detect_outliers(
 
     outliers = {}
 
-    if method.lower() == 'iqr':
+    if method.lower() == "iqr":
         q1 = numeric_df.quantile(0.25)
         q3 = numeric_df.quantile(0.75)
         iqr = q3 - q1
@@ -99,13 +106,12 @@ def detect_outliers(
         upper_bound = q3 + threshold * iqr
 
         for column in numeric_df.columns:
-            mask = (
-                (numeric_df[column] < lower_bound[column]) |
-                (numeric_df[column] > upper_bound[column])
+            mask = (numeric_df[column] < lower_bound[column]) | (
+                numeric_df[column] > upper_bound[column]
             )
             outliers[column] = numeric_df[column][mask]
 
-    elif method.lower() == 'zscore':
+    elif method.lower() == "zscore":
         z_scores = (numeric_df - numeric_df.mean()) / numeric_df.std()
 
         for column in numeric_df.columns:
@@ -126,7 +132,8 @@ def print_outliers(outliers: Dict[str, pd.Series]) -> None:
     """Prints outliers in a formatted way.
 
     Args:
-        outliers: Dictionary of outliers as returned by detect_outliers().
+        outliers (Dict[str, pd.Series]): Dictionary of outliers as returned by
+            detect_outliers().
     """
     for column, values in outliers.items():
         if values.empty:

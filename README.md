@@ -1,61 +1,97 @@
 # Spotify Top 50 Tracks of 2020 Analysis
 
-## Project Overview:
-This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insights into popular tracks, artists, genres, and various features. The analysis includes exploratory data analysis  to answer specific questions about the dataset.
+## Table of Contents
 
-## Instructions:
+- [Project Overview](#project-overview)
+- [Key Findings](#key-findings)
+- [Installation](#installation)
+  - [Clone the Repository](#clone-the-repository)
+  - [Create and Activate Virtual Environment](#create-and-activate-virtual-environment)
+  - [Install Dependencies](#install-dependencies)
+  - [Run Jupyter Notebook](#run-jupyter-notebook)
+- [Analysis Components](#analysis-components)
+- [Development](#development)
+  - [Clone and Setup Virtual Environment](#clone-and-setup-virtual-environment)
+  - [Install Development Dependencies](#install-development-dependencies)
+  - [Run Tests](#run-tests)
+- [License](#license)
 
-1. **Clone the repository:**
-    ```
-    git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
-    ```
+## Project Overview
 
-2. **Navigate to the repository directory:**
-    ```
-    cd spotify-top-50-2020-analysis
-    ```
-3. **Install the required Python packages using the following command:**
-    ```
-    pip install -r requirements.txt
-    ```
-4. **Run the following command to start the Jupyter Notebook:**
-    ```
-    jupyter notebook
-    ```
+This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insights into popular tracks, artists, genres, and various audio features. The analysis includes exploratory data analysis to understand music trends and success patterns.
 
-## Exploratory Data Analysis:
-The Jupyter Notebook contains a comprehensive analysis addressing the following questions:
+## Key Findings
 
-- How many observations are there in this dataset?
-- How many features does this dataset have?
-- Which features are categorical? Which are numeric?
-- Are there any artists with more than 1 popular track? If yes, which and how many?
-- Who is the most popular artist?
-- How many artists, in total, have their songs in the top 50?
-- Are there any albums with more than 1 popular track? If yes, which and how many?
-- How many albums, in total, have their songs in the top 50?
-- Which tracks have a danceability score above 0.7?
-- Which tracks have a danceability score below 0.4?
-- Which tracks have their loudness above -5?
-- Which tracks have their loudness below -8?
-- Which track is the longest?
-- Which track is the shortest?
-- Which genre is the most popular?
-- Which genres have just one song on the top 50?
-- How many genres in total are represented in the top 50?
-- Which features are strongly positively correlated?
-- Which features are strongly negatively correlated?
-- Which features are not correlated?
+- Total observations: `50`
+- Total features: `16`
+- Most popular artists: **Dua Lipa**, **Travis Scott**, **Billie Eilish**
+- Most represented genre: **Pop** (`28%`)
+- Longest track: **SICKO MODE** (`5:13`)
+- Strong correlation between loudness and energy: `0.792`
 
-## Results Overview:
-Here is a brief summary of key findings:
+## Installation
 
-- Total observations: 50
-- Total features: 16 
-- Most popular artists: Dua Lipa, Travis Scott, Billie Eilish
-- Longest track: SICKO MODE
-- Features that do not correlate: There are no features that do not correlate.
+### Clone the Repository
 
-For detailed answers, refer to the Spotify50.ipynb notebook.
+```bash
+git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
+cd spotify-top-50-2020-analysis
+```
 
-**Note:** For a detailed analysis and answers to specific questions, please refer to the Jupyter Notebook.
+### Create and Activate Virtual Environment
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Windows
+venv\Scripts\activate
+
+# Activate on macOS/Linux
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -e .
+```
+
+### Run Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+## Analysis Components
+
+The Jupyter Notebook explores:
+
+- Artist and album diversity
+- Genre distribution
+- Audio characteristics (danceability, loudness, energy)
+- Feature correlations
+- Track duration patterns
+- Production trends
+
+## Development
+
+### Clone and Setup Virtual Environment
+
+Clone the repository and set up the virtual environment as shown in the [Installation](#installation) section.
+
+### Install Development Dependencies
+
+```bash
+pip install -e ".[dev]"
+```
+
+### Run Tests
+
+```bash
+pytest
+```
+
+## License
+
+This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details

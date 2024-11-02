@@ -6,6 +6,10 @@ authors = ["Vytautas Bunevičius"]
 license = "Unlicense"
 readme = "README.md"
 
+packages = [
+    { include = "spotify_top_50_2020_analysis", from = "src" }
+]
+
 [tool.poetry.dependencies]
 python = "^3.12"
 appnope = "0.1.4"
@@ -75,7 +79,6 @@ virtualenv = "20.27.1"
 wcwidth = "0.2.13"
 wheel = "0.44.0"
 xattr = "1.1.0"
-
 
 [build-system]
 requires = ["poetry-core"]
