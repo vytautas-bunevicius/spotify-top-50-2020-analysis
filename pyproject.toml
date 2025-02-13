@@ -1,7 +1,7 @@
 [project]
 name = "spotify-top-50-2020-analysis"
 version = "0.1.0"
-description = "Add your description here"
+description = "Analysis of the Spotify Top 50 Tracks of 2020 dataset"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
