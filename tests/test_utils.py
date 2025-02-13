@@ -67,10 +67,10 @@ def test_find_project_root_not_found(monkeypatch, tmp_path: Path) -> None:
     with mock.patch("src.spotify_top_50_2020_analysis.utils.Path") as mock_path_class:
         mock_path_instance = mock.MagicMock(spec=Path)
         mock_path_instance.exists.return_value = False
+        mock_path_instance.parents = []
         mock_file = mock.MagicMock()
         mock_file.exists.return_value = False
         mock_path_instance.__truediv__.return_value = mock_file
-        mock_path_instance.parent = mock_path_instance
         mock_path_class.cwd.return_value = mock_path_instance
 
         with pytest.raises(FileNotFoundError):
@@ -235,8 +235,7 @@ def test_load_spotify_data_exception(tmp_path: Path) -> None:
         data_dir = project_root / "data"
         data_dir.mkdir()
         csv_file = data_dir / "spotifytoptracks.csv"
-        with open(csv_file, "w") as f:
-            f.write("dummy")
+        csv_file.touch()
 
         mock_read_csv.side_effect = Exception("Read error")
         with pytest.raises(Exception, match="Read error"):
