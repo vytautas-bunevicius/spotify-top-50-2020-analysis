@@ -2,96 +2,127 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Key Findings](#key-findings)
+- [Overview](#overview)
+- [Dashboard](#dashboard)
 - [Installation](#installation)
-  - [Clone the Repository](#clone-the-repository)
-  - [Create and Activate Virtual Environment](#create-and-activate-virtual-environment)
-  - [Install Dependencies](#install-dependencies)
-  - [Run Jupyter Notebook](#run-jupyter-notebook)
-- [Analysis Components](#analysis-components)
-- [Development](#development)
-  - [Clone and Setup Virtual Environment](#clone-and-setup-virtual-environment)
-  - [Install Development Dependencies](#install-development-dependencies)
-  - [Run Tests](#run-tests)
+  - [Using uv (Recommended)](#using-uv-recommended)
+  - [Using pip (Alternative)](#using-pip-alternative)
+- [Data Analysis](#data-analysis)
+  - [Exploratory Analysis](#exploratory-analysis)
+- [Findings and Insights](#findings-and-insights)
+- [Future Improvements](#future-improvements)
 - [License](#license)
 
-## Project Overview
+## Overview
 
-This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insights into popular tracks, artists, genres, and various audio features. The analysis includes exploratory data analysis to understand music trends and success patterns.
+This project analyzes the Spotify Top 50 Tracks of 2020 dataset to derive insights into popular tracks, artists, genres, and various audio features. The analysis leverages a Jupyter Notebook to perform interactive exploratory data analysis and understand music trends and success patterns.
 
-## Key Findings
+## Dashboard
 
-- Total observations: `50`
-- Total features: `16`
-- Most popular artists: **Dua Lipa**, **Travis Scott**, **Billie Eilish**
-- Most represented genre: **Pop** (`28%`)
-- Longest track: **SICKO MODE** (`5:13`)
-- Strong correlation between loudness and energy: `0.792`
+Currently, there is no interactive dashboard available. Future iterations of the project may include a dashboard for real-time data visualization.
 
 ## Installation
 
-### Clone the Repository
+### Using uv (Recommended)
 
-```bash
-git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
-cd spotify-top-50-2020-analysis
-```
+1. **Install uv:**
 
-### Create and Activate Virtual Environment
+   ```bash
+   # On Unix/macOS
+   curl -LsSf https://astral.sh/uv/install.sh | sh
 
-```bash
-# Create virtual environment
-python -m venv venv
+   # On Windows (PowerShell)
+   irm https://astral.sh/uv/install.ps1 | iex
+   ```
 
-# Activate on Windows
-venv\Scripts\activate
+2. **Clone the Repository:**
 
-# Activate on macOS/Linux
-source venv/bin/activate
-```
+   ```bash
+   git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
+   cd spotify-top-50-2020-analysis
+   ```
 
-### Install Dependencies
+3. **Create and Activate a Virtual Environment:**
 
-```bash
-pip install -e .
-```
+   ```bash
+   uv venv
+   source .venv/bin/activate  # On Unix/macOS
+   # or
+   .venv\Scripts\activate     # On Windows
+   ```
 
-### Run Jupyter Notebook
+4. **Install Dependencies:**
 
-```bash
-jupyter notebook
-```
+   ```bash
+   uv pip install -e .
+   ```
 
-## Analysis Components
+5. **Launch Jupyter Notebook:**
 
-The Jupyter Notebook explores:
+   ```bash
+   jupyter notebook
+   ```
+
+### Using pip (Alternative)
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/vytautas-bunevicius/spotify-top-50-2020-analysis.git
+   cd spotify-top-50-2020-analysis
+   ```
+
+2. **Create and Activate a Virtual Environment:**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Unix/macOS
+   # or
+   venv\Scripts\activate     # On Windows
+   ```
+
+3. **Install Dependencies:**
+
+   ```bash
+   pip install -e .
+   ```
+
+4. **Launch Jupyter Notebook:**
+
+   ```bash
+   jupyter notebook
+   ```
+
+## Data Analysis
+
+### Exploratory Analysis
+
+The Jupyter Notebook examines several aspects of the dataset, including:
 
 - Artist and album diversity
-- Genre distribution
-- Audio characteristics (danceability, loudness, energy)
-- Feature correlations
-- Track duration patterns
-- Production trends
+- Genre distribution and trends
+- Audio characteristics such as danceability, loudness, and energy
+- Correlations between various audio features
+- Track duration patterns and production trends
 
-## Development
+## Findings and Insights
 
-### Clone and Setup Virtual Environment
+- Total observations: 50
+- Total features: 16
+- Most popular artists: Dua Lipa, Travis Scott, Billie Eilish
+- Most represented genre: Pop (28%)
+- Longest track: SICKO MODE (5:13)
+- Strong correlation between loudness and energy: 0.792
 
-Clone the repository and set up the virtual environment as shown in the [Installation](#installation) section.
+## Future Improvements
 
-### Install Development Dependencies
+Planned enhancements for future versions include:
 
-```bash
-pip install -e ".[dev]"
-```
-
-### Run Tests
-
-```bash
-pytest
-```
+- Development of an interactive dashboard for real-time data visualization.
+- Extended analysis on year-over-year trends in music analytics.
+- Integration of additional datasets for enriched insights.
+- Improved hypothesis testing and predictive modeling.
 
 ## License
 
-This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details
+This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details.

@@ -258,6 +258,15 @@ wheels = [
 ]
 
 [[package]]
+name = "iniconfig"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3", size = 4646 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ef/a6/62565a6e1cf69e10f5727360368e451d4b7f58beeac6173dc9db836a5b46/iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374", size = 5892 },
+]
+
+[[package]]
 name = "installer"
 version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -539,6 +548,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pluggy"
+version = "1.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1", size = 67955 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/88/5f/e351af9a41f866ac3f1fac4ca0613908d9a41741cfcf2228f4ad853b697d/pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669", size = 20556 },
+]
+
+[[package]]
 name = "poetry"
 version = "1.8.4"
 source = { registry = "https://pypi.org/simple" }
@@ -663,6 +681,21 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz", hash = "sha256:1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8", size = 19228 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl", hash = "sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913", size = 10216 },
+]
+
+[[package]]
+name = "pytest"
+version = "8.3.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "iniconfig" },
+    { name = "packaging" },
+    { name = "pluggy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/05/35/30e0d83068951d90a01852cb1cef56e5d8a09d20c7f511634cc2f7e0372a/pytest-8.3.4.tar.gz", hash = "sha256:965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761", size = 1445919 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/11/92/76a1c94d3afee238333bc0a42b82935dd8f9cf8ce9e336ff87ee14d9e1cf/pytest-8.3.4-py3-none-any.whl", hash = "sha256:50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6", size = 343083 },
 ]
 
 [[package]]
@@ -830,7 +863,7 @@ wheels = [
 [[package]]
 name = "spotify-top-50-2020-analysis"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "appnope" },
     { name = "asttokens" },
@@ -879,6 +912,80 @@ dependencies = [
     { name = "pycparser" },
     { name = "pygments" },
     { name = "pyproject-hooks" },
+    { name = "python-dateutil" },
+    { name = "pytz" },
+    { name = "pyzmq" },
+    { name = "rapidfuzz" },
+    { name = "requests" },
+    { name = "requests-toolbelt" },
+    { name = "setuptools" },
+    { name = "shellingham" },
+    { name = "six" },
+    { name = "stack-data" },
+    { name = "tomlkit" },
+    { name = "tornado" },
+    { name = "traitlets" },
+    { name = "trove-classifiers" },
+    { name = "tzdata" },
+    { name = "urllib3" },
+    { name = "virtualenv" },
+    { name = "wcwidth" },
+    { name = "wheel" },
+    { name = "xattr" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "appnope" },
+    { name = "asttokens" },
+    { name = "build" },
+    { name = "cachecontrol" },
+    { name = "certifi" },
+    { name = "cffi" },
+    { name = "charset-normalizer" },
+    { name = "cleo" },
+    { name = "comm" },
+    { name = "crashtest" },
+    { name = "debugpy" },
+    { name = "decorator" },
+    { name = "distlib" },
+    { name = "dulwich" },
+    { name = "executing" },
+    { name = "fastjsonschema" },
+    { name = "filelock" },
+    { name = "idna" },
+    { name = "iniconfig" },
+    { name = "installer" },
+    { name = "ipykernel" },
+    { name = "ipython" },
+    { name = "jaraco-classes" },
+    { name = "jedi" },
+    { name = "jupyter-client" },
+    { name = "jupyter-core" },
+    { name = "keyring" },
+    { name = "matplotlib-inline" },
+    { name = "more-itertools" },
+    { name = "msgpack" },
+    { name = "nest-asyncio" },
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "pandas" },
+    { name = "parso" },
+    { name = "pexpect" },
+    { name = "pkginfo" },
+    { name = "platformdirs" },
+    { name = "pluggy" },
+    { name = "poetry" },
+    { name = "poetry-core" },
+    { name = "poetry-plugin-export" },
+    { name = "prompt-toolkit" },
+    { name = "psutil" },
+    { name = "ptyprocess" },
+    { name = "pure-eval" },
+    { name = "pycparser" },
+    { name = "pygments" },
+    { name = "pyproject-hooks" },
+    { name = "pytest" },
     { name = "python-dateutil" },
     { name = "pytz" },
     { name = "pyzmq" },
@@ -959,6 +1066,81 @@ requires-dist = [
     { name = "setuptools", specifier = "==75.3.0" },
     { name = "shellingham", specifier = "==1.5.4" },
     { name = "six", specifier = "==1.16.0" },
+    { name = "stack-data", specifier = "==0.6.3" },
+    { name = "tomlkit", specifier = "==0.13.2" },
+    { name = "tornado", specifier = "==6.4.1" },
+    { name = "traitlets", specifier = "==5.14.3" },
+    { name = "trove-classifiers", specifier = "==2024.10.21.16" },
+    { name = "tzdata", specifier = "==2024.2" },
+    { name = "urllib3", specifier = "==2.2.3" },
+    { name = "virtualenv", specifier = "==20.27.1" },
+    { name = "wcwidth", specifier = "==0.2.13" },
+    { name = "wheel", specifier = "==0.44.0" },
+    { name = "xattr", specifier = "==1.1.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "appnope", specifier = "==0.1.4" },
+    { name = "asttokens", specifier = "==2.4.1" },
+    { name = "build", specifier = "==1.2.2.post1" },
+    { name = "cachecontrol", specifier = "==0.14.0" },
+    { name = "certifi", specifier = "==2024.8.30" },
+    { name = "cffi", specifier = "==1.17.1" },
+    { name = "charset-normalizer", specifier = "==3.4.0" },
+    { name = "cleo", specifier = "==2.1.0" },
+    { name = "comm", specifier = "==0.2.2" },
+    { name = "crashtest", specifier = "==0.4.1" },
+    { name = "debugpy", specifier = "==1.8.7" },
+    { name = "decorator", specifier = "==5.1.1" },
+    { name = "distlib", specifier = "==0.3.9" },
+    { name = "dulwich", specifier = "==0.21.7" },
+    { name = "executing", specifier = "==2.1.0" },
+    { name = "fastjsonschema", specifier = "==2.20.0" },
+    { name = "filelock", specifier = "==3.16.1" },
+    { name = "idna", specifier = "==3.10" },
+    { name = "iniconfig", specifier = "==2.0.0" },
+    { name = "installer", specifier = "==0.7.0" },
+    { name = "ipykernel", specifier = "==6.29.5" },
+    { name = "ipython", specifier = "==8.29.0" },
+    { name = "jaraco-classes", specifier = "==3.4.0" },
+    { name = "jedi", specifier = "==0.19.1" },
+    { name = "jupyter-client", specifier = "==8.6.3" },
+    { name = "jupyter-core", specifier = "==5.7.2" },
+    { name = "keyring", specifier = "==24.3.1" },
+    { name = "matplotlib-inline", specifier = "==0.1.7" },
+    { name = "more-itertools", specifier = "==10.5.0" },
+    { name = "msgpack", specifier = "==1.1.0" },
+    { name = "nest-asyncio", specifier = "==1.6.0" },
+    { name = "numpy", specifier = "==2.1.2" },
+    { name = "packaging", specifier = "==24.1" },
+    { name = "pandas", specifier = "==2.2.3" },
+    { name = "parso", specifier = "==0.8.4" },
+    { name = "pexpect", specifier = "==4.9.0" },
+    { name = "pkginfo", specifier = "==1.11.2" },
+    { name = "platformdirs", specifier = "==4.3.6" },
+    { name = "pluggy", specifier = "==1.5.0" },
+    { name = "poetry", specifier = "==1.8.4" },
+    { name = "poetry-core", specifier = "==1.9.1" },
+    { name = "poetry-plugin-export", specifier = "==1.8.0" },
+    { name = "prompt-toolkit", specifier = "==3.0.48" },
+    { name = "psutil", specifier = "==6.1.0" },
+    { name = "ptyprocess", specifier = "==0.7.0" },
+    { name = "pure-eval", specifier = "==0.2.3" },
+    { name = "pycparser", specifier = "==2.22" },
+    { name = "pygments", specifier = "==2.18.0" },
+    { name = "pyproject-hooks", specifier = "==1.2.0" },
+    { name = "pytest", specifier = "==8.3.4" },
+    { name = "python-dateutil", specifier = "==2.9.0.post0" },
+    { name = "pytz", specifier = "==2024.2" },
+    { name = "pyzmq", specifier = "==26.2.0" },
+    { name = "rapidfuzz", specifier = "==3.10.1" },
+    { name = "requests", specifier = "==2.32.3" },
+    { name = "requests-toolbelt", specifier = "==1.0.0" },
+    { name = "setuptools", specifier = "==75.3.0" },
+    { name = "shellingham", specifier = "==1.5.4" },
+    { name = "six", specifier = "==1.16.0" },
+    { name = "spotify-top-50-2020-analysis", editable = "." },
     { name = "stack-data", specifier = "==0.6.3" },
     { name = "tomlkit", specifier = "==0.13.2" },
     { name = "tornado", specifier = "==6.4.1" },
