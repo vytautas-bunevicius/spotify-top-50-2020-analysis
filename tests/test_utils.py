@@ -64,10 +64,13 @@ def test_find_project_root_not_found(monkeypatch, tmp_path: Path) -> None:
     test_dir.mkdir()
     monkeypatch.chdir(test_dir)
 
-    with mock.patch("spotify_top_50_2020_analysis.utils.Path") as mock_path_class:
+    with mock.patch("src.spotify_top_50_2020_analysis.utils.Path") as mock_path_class:
         mock_path_instance = mock.MagicMock(spec=Path)
         mock_path_instance.exists.return_value = False
-        mock_path_instance.parents = []
+        mock_file = mock.MagicMock()
+        mock_file.exists.return_value = False
+        mock_path_instance.__truediv__.return_value = mock_file
+        mock_path_instance.parent = mock_path_instance
         mock_path_class.cwd.return_value = mock_path_instance
 
         with pytest.raises(FileNotFoundError):
@@ -118,7 +121,7 @@ def test_load_spotify_data_file_not_found(tmp_path: Path) -> None:
         tmp_path: Pytest fixture providing temporary directory path.
     """
     with mock.patch(
-        "spotify_top_50_2020_analysis.utils.find_project_root"
+        "src.spotify_top_50_2020_analysis.utils.find_project_root"
     ) as mock_find_root, mock.patch("pathlib.Path.exists") as mock_exists:
         project_root = tmp_path / "project"
         project_root.mkdir()
@@ -221,9 +224,9 @@ def test_load_spotify_data_exception(tmp_path: Path) -> None:
         tmp_path: Pytest fixture providing temporary directory path.
     """
     with mock.patch(
-        "spotify_top_50_2020_analysis.utils.find_project_root"
+        "src.spotify_top_50_2020_analysis.utils.find_project_root"
     ) as mock_find_root, mock.patch(
-        "spotify_top_50_2020_analysis.utils.pd.read_csv"
+        "src.spotify_top_50_2020_analysis.utils.pd.read_csv"
     ) as mock_read_csv:
         project_root = tmp_path / "project"
         project_root.mkdir()
@@ -231,6 +234,9 @@ def test_load_spotify_data_exception(tmp_path: Path) -> None:
 
         data_dir = project_root / "data"
         data_dir.mkdir()
+        csv_file = data_dir / "spotifytoptracks.csv"
+        with open(csv_file, "w") as f:
+            f.write("dummy")
 
         mock_read_csv.side_effect = Exception("Read error")
         with pytest.raises(Exception, match="Read error"):
