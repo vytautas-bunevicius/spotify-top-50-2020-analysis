@@ -129,7 +129,8 @@ The Jupyter Notebook examines several aspects of the dataset, including:
   2:21, "SICKO MODE" succeeds at 5:13. Plan your track length to fit your
   production style, not arbitrary streaming limits.
 
-- **Genre Production Benchmarks**: Different genres require different approaches.
+- **Genre Production Benchmarks**: Different genres require different
+  approaches.
   Alternative/Indie tracks average 0.66 danceability and 0.58 acousticness,
   meaning they use more acoustic instruments. Dance/Electronic averages 0.76
   danceability with almost no acousticness (0.10), meaning heavy electronic
@@ -141,11 +142,14 @@ The Jupyter Notebook examines several aspects of the dataset, including:
   Eilish) each have 3 songs in the Top 50. Focus on developing artists who can
   produce multiple hits rather than chasing one-hit wonders.
 
-- **Album Strategy**: Dua Lipa's "Future Nostalgia" placed 3 tracks in the Top 50
-  simultaneously. A well-executed album concept can drive multiple chart entries,
+- **Album Strategy**: Dua Lipa's "Future Nostalgia" placed 3 tracks in the Top
+  50
+  simultaneously. A well-executed album concept can drive multiple chart
+  entries,
   multiplying exposure and revenue.
 
-- **Genre Viability**: Pop dominates at 28% of the chart, but 16 different genres
+- **Genre Viability**: Pop dominates at 28% of the chart, but 16 different
+  genres
   are represented. You don't need to chase pop trends. There's room for Hip-Hop
   (13 tracks), R&B/Soul, Alternative, and more. Pick artists where you can build
   consistent quality.
@@ -163,5 +167,9 @@ The Jupyter Notebook examines several aspects of the dataset, including:
 
 ## License
 
-This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file
-for details.
+This project is released under the [Unlicense](https://unlicense.org/). This
+means you can copy, modify, publish, use, compile, sell, or distribute this
+software, either in source code form or as a compiled binary, for any purpose,
+commercial or non-commercial, and by any means.
+
+See the [UNLICENSE](UNLICENSE) file for more details.
